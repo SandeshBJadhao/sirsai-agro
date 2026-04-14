@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sirsai Agro - Premium Product Details</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="product-page-body">
+    <!-- Clean Back Navigation -->
+    <header class="site-header product-header scrolled">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html#products">SIRSAI <span class="highlight">AGRO</span></a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">← Back to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Product Layout Engine -->
+    <main class="product-detail-wrapper section">
+        <div class="container">
+            <div class="product-detail-grid">
+                <!-- Data Bound Image Area -->
+                <div class="product-detail-image-container">
+                    <img id="pd-image" src="" alt="Product rendering loading..." class="product-hero-image" loading="eager">
+                </div>
+
+                <!-- Data Bound Content Area -->
+                <div class="product-detail-data">
+                    <h1 id="pd-name">Loading...</h1>
+                    <div id="pd-price" class="price-tag">--</div>
+                    
+                    <p id="pd-desc" class="intro-desc">Loading description...</p>
+                    
+                    <div class="specs-box">
+                        <h3>Key Benefits for Farmers</h3>
+                        <ul id="pd-benefits" class="feature-list"></ul>
+                    </div>
+
+                    <div class="specs-box alt-bg">
+                        <h3>Best Uses</h3>
+                        <ul id="pd-uses" class="usage-list"></ul>
+                    </div>
+
+                    <div class="cta-actions">
+                        <a id="pd-wa" href="#" target="_blank" class="btn btn-primary btn-full whatsapp-cta">Contact on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Dynamic Injection Engine -->
+    <script src="js/products-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const productId = params.get('id');
+
+            // Find match
+            if (productId && productsDb[productId]) {
+                const pd = productsDb[productId];
+                
+                // Bind scalars
+                document.getElementById('pd-name').textContent = pd.name;
+                document.getElementById('pd-price').textContent = pd.price + ' per piece';
+                document.getElementById('pd-desc').textContent = pd.desc;
+                
+                // Bind Image with fallback
+                const detailImg = document.getElementById('pd-image');
+                detailImg.src = pd.image;
+                detailImg.onerror = function() {
+                    this.src = 'assets/product.png';
+                };
+
+                // Bind Benefits Array
+                const bList = document.getElementById('pd-benefits');
+                pd.benefits.forEach(txt => {
+                    const li = document.createElement('li');
+                    li.textContent = txt;
+                    bList.appendChild(li);
+                });
+
+                // Bind Uses Array
+                const uList = document.getElementById('pd-uses');
+                pd.uses.forEach(txt => {
+                    const li = document.createElement('li');
+                    li.textContent = txt;
+                    uList.appendChild(li);
+                });
+
+                // Bind dynamic WhatsApp CTA string encoding
+                const msg = encodeURIComponent(`Hello Sirsai Agro, I am extremely interested in your [${pd.name}] priced at ${pd.price}/piece. Please let me know the minimum order quantity and delivery timelines to my location.`);
+                document.getElementById('pd-wa').href = `https://wa.me/919579775810?text=${msg}`;
+
+                // Document Meta title adjustment
+                document.title = pd.name + " - Sirsai Agro Enterprises";
+            } else {
+                // Failsafe
+                document.querySelector('.product-detail-wrapper').innerHTML = 
+                    "<div style='text-align:center; padding:100px 0;'><h2>Product Not Found</h2><br><a class='btn' href='index.html'>Return Home</a></div>";
+            }
+        });
+    </script>
+</body>
+</html>

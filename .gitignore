@@ -1,0 +1,7 @@
+.agents/
+.claude/
+*.zip
+stitch-skills/
+skills-lock.json
+mcp.json
+.vscode/
