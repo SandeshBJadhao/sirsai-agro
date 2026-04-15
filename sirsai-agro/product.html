@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sirsai Agro - Premium Product Details</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=3">
 </head>
 <body class="product-page-body">
     <!-- Clean Back Navigation -->
@@ -14,7 +17,17 @@
                 <a href="index.html#products">SIRSAI <span class="highlight">AGRO</span></a>
             </div>
             <nav class="nav-links">
-                <a href="index.html">← Back to Home</a>
+                <a href="index.html" data-i18n="pd_back">← मुख्यपृष्ठावर परत जा</a>
+
+                <!-- Language Toggle Button -->
+                <button id="lang-toggle-btn" class="lang-toggle" data-active-lang="mr" aria-label="Switch Language">
+                    <svg class="lang-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="2" y1="12" x2="22" y2="12"/>
+                        <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+                    </svg>
+                    <span class="lang-toggle-label" data-i18n="lang_label">EN</span>
+                </button>
             </nav>
         </div>
     </header>
@@ -36,22 +49,26 @@
                     <p id="pd-desc" class="intro-desc">Loading description...</p>
                     
                     <div class="specs-box">
-                        <h3>Key Benefits for Farmers</h3>
+                        <h3 data-i18n="pd_benefits_title">शेतकऱ्यांसाठी मुख्य फायदे</h3>
                         <ul id="pd-benefits" class="feature-list"></ul>
                     </div>
 
                     <div class="specs-box alt-bg">
-                        <h3>Best Uses</h3>
+                        <h3 data-i18n="pd_uses_title">सर्वोत्तम उपयोग</h3>
                         <ul id="pd-uses" class="usage-list"></ul>
                     </div>
 
                     <div class="cta-actions">
-                        <a id="pd-wa" href="#" target="_blank" class="btn btn-primary btn-full whatsapp-cta">Contact on WhatsApp</a>
+                        <a id="pd-wa" href="#" target="_blank" class="btn btn-primary btn-full whatsapp-cta" data-i18n="pd_wa_btn">WhatsApp वर संपर्क करा</a>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <!-- i18n Scripts -->
+    <script src="js/translations.js"></script>
+    <script src="js/i18n.js"></script>
 
     <!-- Dynamic Injection Engine -->
     <script src="js/products-data.js"></script>
@@ -100,8 +117,10 @@
                 document.title = pd.name + " - Sirsai Agro Enterprises";
             } else {
                 // Failsafe
+                const lang = window.sirsaiI18n ? window.sirsaiI18n.getCurrentLang() : 'mr';
+                const t = translations[lang];
                 document.querySelector('.product-detail-wrapper').innerHTML = 
-                    "<div style='text-align:center; padding:100px 0;'><h2>Product Not Found</h2><br><a class='btn' href='index.html'>Return Home</a></div>";
+                    `<div style='text-align:center; padding:100px 0;'><h2>${t.pd_not_found}</h2><br><a class='btn' href='index.html'>${t.pd_return_home}</a></div>`;
             }
         });
     </script>

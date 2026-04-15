@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
     
     <!-- Custom CSS & Preloads -->
     <link rel="preload" as="image" href="assets/hero_bg.png">
-    <link rel="stylesheet" href="css/style.css?v=2">
+    <link rel="stylesheet" href="css/style.css?v=3">
 </head>
 <body>
 
@@ -31,11 +31,21 @@
             </button>
             
             <nav class="nav-links">
-                <a href="#about">About</a>
-                <a href="#products">Products</a>
-                <a href="#features">Features</a>
-                <a href="#gallery">Gallery</a>
-                <a href="https://wa.me/919579775810?text=Hello%2C%20I%20am%20interested%20in%20your%20seedling%20trays%20for%20my%20farm.%20Please%20share%20pricing%2C%20minimum%20order%20quantity%2C%20and%20delivery%20details." target="_blank" class="btn btn-primary">Contact Now</a>
+                <a href="#about" data-i18n="nav_about">आमच्याबद्दल</a>
+                <a href="#products" data-i18n="nav_products">उत्पादने</a>
+                <a href="#features" data-i18n="nav_features">वैशिष्ट्ये</a>
+                <a href="#gallery" data-i18n="nav_gallery">गॅलरी</a>
+                <a href="https://wa.me/919579775810?text=Hello%2C%20I%20am%20interested%20in%20your%20seedling%20trays%20for%20my%20farm.%20Please%20share%20pricing%2C%20minimum%20order%20quantity%2C%20and%20delivery%20details." target="_blank" class="btn btn-primary" data-i18n="nav_contact">संपर्क करा</a>
+
+                <!-- Language Toggle Button -->
+                <button id="lang-toggle-btn" class="lang-toggle" data-active-lang="mr" aria-label="Switch Language">
+                    <svg class="lang-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="2" y1="12" x2="22" y2="12"/>
+                        <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+                    </svg>
+                    <span class="lang-toggle-label" data-i18n="lang_label">EN</span>
+                </button>
             </nav>
         </div>
     </header>
@@ -46,16 +56,16 @@
             <canvas id="hero-canvas"></canvas>
             <div class="hero-overlay"></div>
             <div class="container hero-content">
-                <span class="badge">Advance Technology of Indian Farming</span>
-                <h1>Premium Seedling Trays For Superior Growth</h1>
-                <p>Manufactured with high-quality HIPS material to ensure durability, reusability, and optimal root development for all types of nursery plants.</p>
+                <span class="badge" data-i18n="hero_badge">भारतीय शेतीचे आधुनिक तंत्रज्ञान</span>
+                <h1 data-i18n="hero_title">उत्कृष्ट रोपवाटिका ट्रे – उत्तम वाढीसाठी</h1>
+                <p data-i18n="hero_desc">उच्च दर्जाच्या HIPS मटेरियलने बनवलेले, टिकाऊ, पुन्हा वापरता येणारे आणि सर्व प्रकारच्या रोपवाटिका रोपांसाठी उत्तम मूळ विकास सुनिश्चित करणारे.</p>
                 <div class="hero-actions">
-                    <a href="#products" class="btn btn-primary btn-large">View Products</a>
+                    <a href="#products" class="btn btn-primary btn-large" data-i18n="hero_btn_products">उत्पादने पहा</a>
                     <a href="https://wa.me/919579775810?text=Hello%2C%20I%20am%20interested%20in%20your%20seedling%20trays%20for%20my%20farm.%20Please%20share%20pricing%2C%20minimum%20order%20quantity%2C%20and%20delivery%20details." target="_blank" class="btn btn-whatsapp btn-large">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M11.996 0C5.372 0 0 5.373 0 11.998c0 2.127.553 4.197 1.603 6.01L.34 23.633l5.807-1.523A11.95 11.95 0 0 0 11.995 24c6.621 0 11.998-5.376 11.998-11.999s-5.377-12-11.995-12h-.002zm0 22.003c-1.802 0-3.561-.482-5.11-1.401l-.367-.217-3.799.996.997-3.7-.238-.379A9.957 9.957 0 0 1 2.001 12A9.997 9.997 0 0 1 11.996 2a10.003 10.003 0 0 1 0 20.003zM17.48 14.5c-.302-.15-1.782-.88-2.059-.982-.277-.1-.478-.15-.68.15s-.78 1.002-.954 1.201-.351.226-.654.076-1.274-.472-2.428-1.503c-.899-.803-1.505-1.794-1.681-2.096s-.019-.32.131-.471c.135-.136.302-.351.453-.526.151-.176.202-.301.302-.501.101-.201.05-.376-.025-.526-.076-.151-.68-1.643-.931-2.25-.246-.595-.494-.515-.68-.524h-.58c-.201 0-.527.075-.804.376-.276.3-.981.959-.981 2.339 0 1.38 1.005 2.716 1.144 2.902.138.188 1.979 3.018 4.793 4.234 2.813 1.216 2.813.803 3.315.753.502-.05 1.782-.728 2.033-1.431.252-.703.252-1.304.177-1.43z"/>
                         </svg>
-                        WhatsApp Us
+                        <span data-i18n="hero_btn_whatsapp">WhatsApp वर संपर्क करा</span>
                     </a>
                 </div>
             </div>
@@ -66,13 +76,13 @@
     <section class="about section" id="about">
         <div class="container grid about-grid">
             <div class="about-content">
-                <h2 class="section-title">Cultivating Growth with <span>Sirsai Agro</span></h2>
-                <p>Located in the heart of the agricultural hub in Baramati, <strong>SIRSAI AGRO ENTERPRISES</strong> is dedicated to advancing the technology of Indian farming. We specialize in the manufacturing of high-grade seedling trays that meet the rigorous demands of modern nurseries.</p>
-                <p>Our commitment to quality means every tray we produce helps farmers achieve standard crop growth, better root structure, and ultimately higher yields. Whether it's tomatoes, chillies, cauliflower, or cabbage, we provide the strong foundation your plants need to thrive.</p>
+                <h2 class="section-title"><span data-i18n="about_title_pre">सिरसाई ऍग्रो सोबत</span> <span data-i18n="about_title_highlight">वाढीची जोपासना</span></h2>
+                <p data-i18n="about_p1">बारामतीच्या कृषी केंद्रस्थानी स्थित, <strong>सिरसाई ऍग्रो एंटरप्रायझेस</strong> भारतीय शेतीचे तंत्रज्ञान प्रगत करण्यासाठी समर्पित आहे. आम्ही आधुनिक रोपवाटिकांच्या कठोर मागण्या पूर्ण करणाऱ्या उच्च दर्जाच्या सीडलिंग ट्रेच्या उत्पादनात विशेषज्ञ आहोत.</p>
+                <p data-i18n="about_p2">गुणवत्तेप्रती आमची बांधिलकी म्हणजे आम्ही बनवलेल्या प्रत्येक ट्रेमुळे शेतकऱ्यांना मानक पीक वाढ, चांगली मूळ रचना आणि अंतिमतः अधिक उत्पन्न मिळते. टमाटर, मिरची, फ्लॉवर किंवा कोबी असो, आम्ही तुमच्या रोपांना भरभराटीसाठी आवश्यक मजबूत पाया प्रदान करतो.</p>
                 <ul class="about-list">
-                    <li>✓ High-Quality HIPS Material</li>
-                    <li>✓ Advanced Injection Molding Technology</li>
-                    <li>✓ Direct Manufacturer Pricing</li>
+                    <li data-i18n="about_check1">✓ उच्च दर्जाचे HIPS मटेरियल</li>
+                    <li data-i18n="about_check2">✓ प्रगत इंजेक्शन मोल्डिंग तंत्रज्ञान</li>
+                    <li data-i18n="about_check3">✓ थेट उत्पादक किंमती</li>
                 </ul>
             </div>
             <div class="about-image">
@@ -85,8 +95,8 @@
     <section class="products section bg-light" id="products">
         <div class="container">
             <div class="section-header center">
-                <h2 class="section-title">Our Premium Seedling Trays</h2>
-                <p>Explore our wide range of cavity variants engineered for different types of crops and nursery requirements.</p>
+                <h2 class="section-title" data-i18n="products_title">आमचे प्रीमियम सीडलिंग ट्रे</h2>
+                <p data-i18n="products_desc">विविध प्रकारच्या पिकांसाठी आणि रोपवाटिका गरजांसाठी तयार केलेल्या आमच्या विस्तृत श्रेणीचा शोध घ्या.</p>
             </div>
             
             <div class="grid product-grid">
@@ -96,22 +106,22 @@
                         <img src="assets/products/70 Cavity Tray (Round).jpg.jpg" onerror="this.src='assets/product.png'" alt="70 Cavity Tray (Round)" class="product-img" loading="lazy" decoding="async">
                     </div>
                     <div class="product-info">
-                        <h3>70 Cavity Tray (Round)</h3>
-                        <p class="product-price">₹8 / piece</p>
-                        <p class="product-desc">Type: Round cells</p>
+                        <h3 data-i18n="product_1_name">70 कॅव्हिटी ट्रे (गोल)</h3>
+                        <p class="product-price" data-i18n="product_1_price">₹८ / प्रति नग</p>
+                        <p class="product-desc" data-i18n="product_1_desc">प्रकार: गोल पेशी</p>
                     </div>
                 </div>
 
                 <!-- Product 2 -->
                 <div class="product-card">
-                    <div class="product-badge accent">Popular</div>
+                    <div class="product-badge accent" data-i18n="product_badge_popular">लोकप्रिय</div>
                     <div class="product-img-wrapper">
                         <img src="assets/products/70 Cavity Tray (Square).jpg.jpg" onerror="this.src='assets/product.png'" alt="70 Cavity Tray (Square)" class="product-img" loading="lazy" decoding="async">
                     </div>
                     <div class="product-info">
-                        <h3>70 Cavity Tray (Square)</h3>
-                        <p class="product-price">₹9 / piece</p>
-                        <p class="product-desc">Type: Square cells</p>
+                        <h3 data-i18n="product_2_name">70 कॅव्हिटी ट्रे (चौकोनी)</h3>
+                        <p class="product-price" data-i18n="product_2_price">₹९ / प्रति नग</p>
+                        <p class="product-desc" data-i18n="product_2_desc">प्रकार: चौकोनी पेशी</p>
                     </div>
                 </div>
 
@@ -121,22 +131,22 @@
                         <img src="assets/products/102 Cavity Tray (Round).jpg.jpg" onerror="this.src='assets/product.png'" alt="102 Cavity Tray (Round)" class="product-img" loading="lazy" decoding="async">
                     </div>
                     <div class="product-info">
-                        <h3>102 Cavity Tray (Round)</h3>
-                        <p class="product-price">₹7 / piece</p>
-                        <p class="product-desc">Type: Round cells</p>
+                        <h3 data-i18n="product_3_name">102 कॅव्हिटी ट्रे (गोल)</h3>
+                        <p class="product-price" data-i18n="product_3_price">₹७ / प्रति नग</p>
+                        <p class="product-desc" data-i18n="product_3_desc">प्रकार: गोल पेशी</p>
                     </div>
                 </div>
 
                 <!-- Product 4 -->
                 <div class="product-card">
-                    <div class="product-badge">Best Value</div>
+                    <div class="product-badge" data-i18n="product_badge_bestvalue">सर्वोत्तम मूल्य</div>
                     <div class="product-img-wrapper">
                         <img src="assets/products/126 Cavity Tray (Round).jpg.jpg" onerror="this.src='assets/product.png'" alt="126 Cavity Tray (Round)" class="product-img" loading="lazy" decoding="async">
                     </div>
                     <div class="product-info">
-                        <h3>126 Cavity Tray (Round)</h3>
-                        <p class="product-price">₹7 / piece</p>
-                        <p class="product-desc">Type: Round cells</p>
+                        <h3 data-i18n="product_4_name">126 कॅव्हिटी ट्रे (गोल)</h3>
+                        <p class="product-price" data-i18n="product_4_price">₹७ / प्रति नग</p>
+                        <p class="product-desc" data-i18n="product_4_desc">प्रकार: गोल पेशी</p>
                     </div>
                 </div>
             </div>
@@ -149,18 +159,18 @@
             <div class="grid feature-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🌿</div>
-                    <h3>High Germination Rate</h3>
-                    <p>Designed with perfect ventilation and drainage holes, ensuring your seeds get exactly what they need to sprout.</p>
+                    <h3 data-i18n="feature_1_title">उच्च उगवण दर</h3>
+                    <p data-i18n="feature_1_desc">योग्य वायुवीजन आणि निचरा छिद्रांसह डिझाइन केलेले, जेणेकरून बियांना अंकुरण्यासाठी जे काही लागते ते मिळते.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🛡️</div>
-                    <h3>Superior Durability</h3>
-                    <p>Constructed with premium high-impact polystyrene (HIPS). Will not easily crack or break during transport.</p>
+                    <h3 data-i18n="feature_2_title">उत्कृष्ट टिकाऊपणा</h3>
+                    <p data-i18n="feature_2_desc">प्रीमियम हाय-इम्पॅक्ट पॉलिस्टायरीन (HIPS) ने बनवलेले. वाहतुकीत सहजासहजी तडकणार किंवा फुटणार नाही.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">♻️</div>
-                    <h3>Highly Reusable</h3>
-                    <p>Easy to clean and sterilize after harvest. Our thick rim design enables multiple growing seasons, saving your money.</p>
+                    <h3 data-i18n="feature_3_title">अत्यंत पुन्हा वापरण्यायोग्य</h3>
+                    <p data-i18n="feature_3_desc">कापणीनंतर स्वच्छ आणि निर्जंतुक करणे सोपे. आमचे जाड रिम डिझाइन अनेक पिकवणी हंगामांसाठी टिकते, तुमचे पैसे वाचवते.</p>
                 </div>
             </div>
         </div>
@@ -170,22 +180,22 @@
     <section class="gallery section bg-light" id="gallery">
         <div class="container">
             <div class="section-header center">
-                <h2 class="section-title">Farm visual & <span>Results</span></h2>
-                <p>See our high-quality trays in action, promoting superior root growth and healthy seedlings. Click to view details.</p>
+                <h2 class="section-title"><span data-i18n="gallery_title_pre">शेतातील दृश्ये आणि</span> <span data-i18n="gallery_title_highlight">परिणाम</span></h2>
+                <p data-i18n="gallery_desc">आमचे उच्च दर्जाचे ट्रे कृतीत पहा, उत्कृष्ट मूळ वाढ आणि निरोगी रोपांना प्रोत्साहन देतात. तपशील पाहण्यासाठी क्लिक करा.</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item lightbox-trigger" data-title="Product Manufacturing">
+                <div class="gallery-item lightbox-trigger" data-title-i18n="gallery_item1_title" data-title="उत्पादन निर्मिती">
                     <img src="assets/gallery.png" alt="Seedling Tray Stack" loading="lazy">
-                    <div class="gallery-overlay"><span>View Details</span></div>
+                    <div class="gallery-overlay"><span data-i18n="gallery_view">तपशील पहा</span></div>
                 </div>
-                <div class="gallery-item lightbox-trigger" data-title="Nursery Application">
+                <div class="gallery-item lightbox-trigger" data-title-i18n="gallery_item2_title" data-title="रोपवाटिका उपयोग">
                     <img src="assets/hero_bg.png" alt="Greenhouse Nursery" loading="lazy">
-                    <div class="gallery-overlay"><span>View Details</span></div>
+                    <div class="gallery-overlay"><span data-i18n="gallery_view">तपशील पहा</span></div>
                 </div>
                 <!-- Adding a random image logic to cover the missing images and simulate grid fullness -->
-                <div class="gallery-item lightbox-trigger" data-title="Happy Harvest">
+                <div class="gallery-item lightbox-trigger" data-title-i18n="gallery_item3_title" data-title="आनंदी कापणी">
                     <img src="assets/hero_bg.png" style="object-position: bottom;" alt="Farming Field" loading="lazy">
-                    <div class="gallery-overlay"><span>View Details</span></div>
+                    <div class="gallery-overlay"><span data-i18n="gallery_view">तपशील पहा</span></div>
                 </div>
             </div>
         </div>
@@ -196,21 +206,21 @@
         <div class="container">
             <div class="grid contact-grid">
                 <div class="contact-info-wrapper contact-cards">
-                    <h2 class="section-title">Get in Touch</h2>
-                    <p>Have questions about our products or want to place a bulk order? We are available immediately via WhatsApp or Direct Call.</p>
+                    <h2 class="section-title" data-i18n="contact_title">संपर्कात रहा</h2>
+                    <p data-i18n="contact_desc">आमच्या उत्पादनांबद्दल प्रश्न आहेत किंवा मोठ्या प्रमाणात ऑर्डर द्यायची आहे? आम्ही WhatsApp किंवा थेट कॉलद्वारे ताबडतोब उपलब्ध आहोत.</p>
                     
                     <div class="contact-details stylized">
                         <a href="https://maps.google.com" target="_blank" class="contact-card">
                             <div class="icon">📍</div>
                             <div class="contact-card-content">
-                                <h4>Factory Location</h4>
-                                <p>Morgaon - Supa Road, Supa,<br>Tal - Baramati, Dist - Pune 412204</p>
+                                <h4 data-i18n="contact_location_title">कारखाना स्थान</h4>
+                                <p data-i18n="contact_location_addr">मोरगाव - सुपा रोड, सुपा,<br>तालुका - बारामती, जिल्हा - पुणे ४१२२०४</p>
                             </div>
                         </a>
                         <div class="contact-card border-left">
                             <div class="icon">📞</div>
                             <div class="contact-card-content">
-                                <h4>Call Us Directly</h4>
+                                <h4 data-i18n="contact_call_title">थेट कॉल करा</h4>
                                 <p>Mr. Arun Khaire: <a href="tel:+919579775810" class="tel-link">+91 9579775810</a></p>
                                 <p>Mr. Mandar Khaire: <a href="tel:+918317296282" class="tel-link">+91 8317296282</a></p>
                             </div>
@@ -218,7 +228,7 @@
                         <a href="mailto:sirsaiagroenterprises@gmail.com" class="contact-card">
                             <div class="icon">✉️</div>
                             <div class="contact-card-content">
-                                <h4>Email Us</h4>
+                                <h4 data-i18n="contact_email_title">ईमेल करा</h4>
                                 <p>sirsaiagroenterprises@gmail.com</p>
                             </div>
                         </a>
@@ -226,39 +236,39 @@
                 </div>
                 
                 <div class="product-showcase-compact">
-                    <h3 class="compact-title">Ready variants for order</h3>
+                    <h3 class="compact-title" data-i18n="contact_compact_title">ऑर्डरसाठी तयार प्रकार</h3>
                     <div class="compact-grid">
                         <div class="compact-item">
                             <img src="assets/products/70 Cavity Tray (Round).jpg.jpg" onerror="this.src='assets/product.png'" alt="70 Cavity Tray (Round)" loading="lazy">
                             <div class="compact-info">
-                                <h4>70 Cavity Tray (Round)</h4>
-                                <span>High germination, durable</span>
+                                <h4 data-i18n="product_1_name">70 कॅव्हिटी ट्रे (गोल)</h4>
+                                <span data-i18n="compact_1_sub">उच्च उगवण, टिकाऊ</span>
                             </div>
-                            <a href="https://wa.me/919579775810?text=Hello%2C%20I%20am%20interested%20in%20your%20seedling%20trays%20for%20my%20farm.%20Please%20share%20pricing%2C%20minimum%20order%20quantity%2C%20and%20delivery%20details." target="_blank" class="whatsapp-cta-sm">💬 WhatsApp</a>
+                            <a href="https://wa.me/919579775810?text=Hello%2C%20I%20am%20interested%20in%20your%20seedling%20trays%20for%20my%20farm.%20Please%20share%20pricing%2C%20minimum%20order%20quantity%2C%20and%20delivery%20details." target="_blank" class="whatsapp-cta-sm" data-i18n="compact_wa">💬 WhatsApp</a>
                         </div>
                         <div class="compact-item">
                             <img src="assets/products/70 Cavity Tray (Square).jpg.jpg" onerror="this.src='assets/product.png'" alt="70 Cavity Tray (Square)" loading="lazy">
                             <div class="compact-info">
-                                <h4>70 Cavity Tray (Square)</h4>
-                                <span>Dense root structure</span>
+                                <h4 data-i18n="product_2_name">70 कॅव्हिटी ट्रे (चौकोनी)</h4>
+                                <span data-i18n="compact_2_sub">दाट मूळ रचना</span>
                             </div>
-                            <a href="https://wa.me/919579775810?text=Hello%2C%20I%20am%20interested%20in%20your%20seedling%20trays%20for%20my%20farm.%20Please%20share%20pricing%2C%20minimum%20order%20quantity%2C%20and%20delivery%20details." target="_blank" class="whatsapp-cta-sm">💬 WhatsApp</a>
+                            <a href="https://wa.me/919579775810?text=Hello%2C%20I%20am%20interested%20in%20your%20seedling%20trays%20for%20my%20farm.%20Please%20share%20pricing%2C%20minimum%20order%20quantity%2C%20and%20delivery%20details." target="_blank" class="whatsapp-cta-sm" data-i18n="compact_wa">💬 WhatsApp</a>
                         </div>
                         <div class="compact-item">
                             <img src="assets/products/102 Cavity Tray (Round).jpg.jpg" onerror="this.src='assets/product.png'" alt="102 Cavity Tray (Round)" loading="lazy">
                             <div class="compact-info">
-                                <h4>102 Cavity Tray (Round)</h4>
-                                <span>Ideal for greens</span>
+                                <h4 data-i18n="product_3_name">102 कॅव्हिटी ट्रे (गोल)</h4>
+                                <span data-i18n="compact_3_sub">हिरव्या भाज्यांसाठी आदर्श</span>
                             </div>
-                            <a href="https://wa.me/919579775810?text=Hello%2C%20I%20am%20interested%20in%20your%20seedling%20trays%20for%20my%20farm.%20Please%20share%20pricing%2C%20minimum%20order%20quantity%2C%20and%20delivery%20details." target="_blank" class="whatsapp-cta-sm">💬 WhatsApp</a>
+                            <a href="https://wa.me/919579775810?text=Hello%2C%20I%20am%20interested%20in%20your%20seedling%20trays%20for%20my%20farm.%20Please%20share%20pricing%2C%20minimum%20order%20quantity%2C%20and%20delivery%20details." target="_blank" class="whatsapp-cta-sm" data-i18n="compact_wa">💬 WhatsApp</a>
                         </div>
                         <div class="compact-item">
                             <img src="assets/products/126 Cavity Tray (Round).jpg.jpg" onerror="this.src='assets/product.png'" alt="126 Cavity Tray (Round)" loading="lazy">
                             <div class="compact-info">
-                                <h4>126 Cavity Tray (Round)</h4>
-                                <span>Max Density Design</span>
+                                <h4 data-i18n="product_4_name">126 कॅव्हिटी ट्रे (गोल)</h4>
+                                <span data-i18n="compact_4_sub">जास्तीत जास्त घनता डिझाइन</span>
                             </div>
-                            <a href="https://wa.me/919579775810?text=Hello%2C%20I%20am%20interested%20in%20your%20seedling%20trays%20for%20my%20farm.%20Please%20share%20pricing%2C%20minimum%20order%20quantity%2C%20and%20delivery%20details." target="_blank" class="whatsapp-cta-sm">💬 WhatsApp</a>
+                            <a href="https://wa.me/919579775810?text=Hello%2C%20I%20am%20interested%20in%20your%20seedling%20trays%20for%20my%20farm.%20Please%20share%20pricing%2C%20minimum%20order%20quantity%2C%20and%20delivery%20details." target="_blank" class="whatsapp-cta-sm" data-i18n="compact_wa">💬 WhatsApp</a>
                         </div>
                     </div>
                 </div>
@@ -282,22 +292,26 @@
                 <div class="logo">
                      <a href="#">SIRSAI <span class="highlight">AGRO</span></a>
                  </div>
-                 <p>Advance Technology of Indian Farming.</p>
+                 <p data-i18n="footer_tagline">भारतीय शेतीचे आधुनिक तंत्रज्ञान.</p>
             </div>
             <div class="footer-links">
-                <h4>Quick Links</h4>
-                <a href="#about">About Factory</a>
-                <a href="#products">Seedling Trays</a>
-                <a href="#features">Why Choose Us</a>
-                <a href="#contact">Contact</a>
+                <h4 data-i18n="footer_quicklinks">जलद दुवे</h4>
+                <a href="#about" data-i18n="footer_link_about">कारखान्याबद्दल</a>
+                <a href="#products" data-i18n="footer_link_products">सीडलिंग ट्रे</a>
+                <a href="#features" data-i18n="footer_link_features">आम्हाला का निवडावे</a>
+                <a href="#contact" data-i18n="footer_link_contact">संपर्क</a>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2026 SIRSAI AGRO ENTERPRISES. All rights reserved.</p>
+                <p data-i18n="footer_copyright">© २०२६ सिरसाई ऍग्रो एंटरप्रायझेस. सर्व हक्क राखीव.</p>
             </div>
         </div>
     </footer>
+
+    <!-- i18n Scripts (load before main.js) -->
+    <script src="js/translations.js"></script>
+    <script src="js/i18n.js"></script>
 
     <!-- Custom JS -->
     <script src="js/main.js"></script>

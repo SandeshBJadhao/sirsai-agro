@@ -1060,3 +1060,95 @@ img {
         text-align: center;
     }
 }
+
+/* ==========================================================================
+   Language Toggle Button
+   ========================================================================== */
+.lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 1rem;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50px;
+    color: var(--clr-white);
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    white-space: nowrap;
+    min-height: 38px;
+}
+
+.lang-toggle:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: rgba(255, 255, 255, 0.45);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.lang-toggle:active {
+    transform: translateY(0) scale(0.97);
+}
+
+.lang-toggle .lang-icon {
+    flex-shrink: 0;
+    opacity: 0.9;
+}
+
+.lang-toggle-label {
+    letter-spacing: 0.5px;
+}
+
+/* Scrolled state - darker pill */
+.site-header.scrolled .lang-toggle {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: var(--clr-white);
+}
+
+.site-header.scrolled .lang-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Product page header */
+.product-header .lang-toggle {
+    background: rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.12);
+    color: var(--clr-text-main);
+}
+
+.product-header .lang-toggle:hover {
+    background: rgba(0, 0, 0, 0.1);
+    border-color: var(--clr-primary);
+    color: var(--clr-primary);
+}
+
+/* Mobile responsive */
+@media (max-width: 900px) {
+    .lang-toggle {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.2);
+        color: var(--clr-white);
+        align-self: center;
+        margin-top: 1rem;
+    }
+
+    .lang-toggle:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+}
+
+/* Desktop header (non-scrolled, non-product) - white on transparent */
+@media (min-width: 769px) {
+    .site-header:not(.scrolled):not(.product-header) .lang-toggle {
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.25);
+        color: var(--clr-white);
+    }
+}
